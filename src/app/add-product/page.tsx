@@ -1,3 +1,4 @@
+import { addProduct } from "@/actions/product";
 import FormSubmitButton from "@/components/FormSubmitButton";
 import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
@@ -7,29 +8,6 @@ export const metadata = {
   title: "Add Product",
 };
 
-export async function addProduct(formData: FormData) {
-  "use server";
-
-  const name = formData.get("name") as string;
-  const description = formData.get("description") as string;
-  const price = Number(formData.get("price"));
-  const imageUrl = formData.get("imageUrl") as string;
-  console.log(formData);
-
-  if (!name || !description || !price || !imageUrl) {
-    throw new Error("All fields are required");
-  }
-
-  await prisma.product.create({
-    data: {
-      name,
-      description,
-      imageUrl,
-      price,
-    },
-  });
-  redirect("/");
-}
 
 const page = () => {
   return (
