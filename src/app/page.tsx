@@ -72,31 +72,31 @@ export default async function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="bg-white border-t border-gray-200">
+      <div className="bg-accent border-t border-gray-200">
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🛡️</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Quality Guarantee</h3>
-              <p className="text-gray-600">All products are carefully tested and verified for quality.</p>
+              <h3 className="text-xl font-semibold text-accent-content mb-2">Quality Guarantee</h3>
+              <p className="text-accent-content/70">All products are carefully tested and verified for quality.</p>
             </div>
             
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚀</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Fast Shipping</h3>
-              <p className="text-gray-600">Quick and reliable delivery to your doorstep.</p>
+              <h3 className="text-xl font-semibold text-accent-content mb-2">Fast Shipping</h3>
+              <p className="text-accent-content/70">Quick and reliable delivery to your doorstep.</p>
             </div>
             
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">💬</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">24/7 Support</h3>
-              <p className="text-gray-600">Our customer support team is always here to help.</p>
+              <h3 className="text-xl font-semibold text-accent-content mb-2">24/7 Support</h3>
+              <p className="text-accent-content/70">Our customer support team is always here to help.</p>
             </div>
           </div>
         </div>
