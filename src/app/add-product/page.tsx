@@ -1,4 +1,5 @@
-import { addProduct } from "@/actions/product";
+
+import { addProduct } from "@/actions/action";
 import FormSubmitButton from "@/components/FormSubmitButton";
 import React from "react";
 
@@ -14,7 +15,7 @@ const page = () => {
       <div className="bg-base-200 border border-base-300 rounded-2xl shadow-xl overflow-hidden">
         
         {/* Form Header */}
-        <div className="bg-gradient-to-r from-primary to-secondary border-b border-base-300 px-8 py-6">
+        <div className="bg-gradient-to-r from-blue-500 to-purple-500 border-b border-base-300 px-8 py-6">
           <h2 className="text-primary-content text-center text-xl font-semibold">
             Product Information
           </h2>

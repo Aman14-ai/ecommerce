@@ -6,9 +6,9 @@ export default async function Home() {
   // console.log(products);
 
   return (
-<div className="min-h-screen bg-gradient-to-br from-base-100 to-secondary">
+<div className="min-h-screen bg-base-100">
   {/* Header Section */}
-  <div className="bg-gradient-to-r from-primary to-secondary shadow-lg">
+  <div className="bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg">
     <div className="container mx-auto px-4 py-12">
       <div className="text-center">
         <h1 className="text-primary-content text-4xl md:text-5xl font-bold mb-4 tracking-wide">
@@ -67,38 +67,7 @@ export default async function Home() {
         ))}
       </div>
     )}
-  </div>
-
-  {/* Features Section */}
-  <div className="bg-accent border-t border-base-200">
-    <div className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="text-center p-6">
-          <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl text-primary-content">🛡️</span>
-          </div>
-          <h3 className="text-xl font-semibold text-accent-content mb-2">Quality Guarantee</h3>
-          <p className="text-accent-content/70">All products are carefully tested and verified for quality.</p>
-        </div>
-
-        <div className="text-center p-6">
-          <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl text-secondary-content">🚀</span>
-          </div>
-          <h3 className="text-xl font-semibold text-accent-content mb-2">Fast Shipping</h3>
-          <p className="text-accent-content/70">Quick and reliable delivery to your doorstep.</p>
-        </div>
-
-        <div className="text-center p-6">
-          <div className="w-16 h-16 bg-info rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl text-info-content">💬</span>
-          </div>
-          <h3 className="text-xl font-semibold text-accent-content mb-2">24/7 Support</h3>
-          <p className="text-accent-content/70">Our customer support team is always here to help.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  </div>  
 </div>
 
   );
