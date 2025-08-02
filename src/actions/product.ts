@@ -10,7 +10,7 @@ export async function addProduct(formData:FormData)
       const description = formData.get("description") as string;
       const price = Number(formData.get("price"));
       const imageUrl = formData.get("imageUrl") as string;
-      console.log(formData);
+      // console.log(formData);
     
       if (!name || !description || !price || !imageUrl) {
         throw new Error("All fields are required");

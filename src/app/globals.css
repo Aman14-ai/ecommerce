@@ -40,7 +40,3 @@
   --depth: 1;
   --noise: 1;
 }
-
-:root{
-  background-color: var(--color-primary);
-}
