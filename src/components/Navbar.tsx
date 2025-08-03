@@ -4,8 +4,10 @@ import { ShoppingCart, Search, Menu, X, User, Heart, Moon } from "lucide-react";
 import { getCart } from "@/lib/db/cart";
 import { addedToCartContext } from "@/context/addedToCartContext";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const path = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
@@ -90,7 +92,14 @@ const Navbar = () => {
             </button>
 
             {/* Shopping Cart */}
-            <Link href="/cart" className="cursor-pointer">
+            <Link
+              href="/cart"
+              className={`relative flex items-center justify-between rounded-xl   transition-all duration-300 ${
+                path === "/cart"
+                  ? "animate-pulse-once border-yellow-300 bg-yellow-50 shadow-lg hover:shadow-yellow-200/50 border"
+                  : ""
+              } `}
+            >
               <button className="group relative cursor-pointer rounded-full p-2 transition-colors hover:bg-gray-100 hover:text-black">
                 <ShoppingCart className="text-primary-content h-6 w-6 group-hover:text-blue-600" />
                 {cartCount > 0 && (
