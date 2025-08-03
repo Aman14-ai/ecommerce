@@ -96,7 +96,7 @@ const Navbar = () => {
               href="/cart"
               className={`relative flex items-center justify-between rounded-xl   transition-all duration-300 ${
                 path === "/cart"
-                  ? "animate-pulse-once border-yellow-300 bg-yellow-50 shadow-lg hover:shadow-yellow-200/50 border"
+                  ? "animate-pulse-once border-purple-400 bg-purple-100 shadow-lg hover:shadow-purple-200/50 border"
                   : ""
               } `}
             >
