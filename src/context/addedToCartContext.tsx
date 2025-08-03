@@ -1,5 +1,6 @@
 'use client'
 
+import { ShoppingCart } from '@/lib/db/cart'
 import { createContext, useState } from 'react'
 
 // Define the context type
@@ -13,7 +14,6 @@ export const addedToCartContext = createContext<AddedToCartContextType | undefin
 
 export const AddedToCartProvider = ({ children }: { children: React.ReactNode }) => {
   const [addedToCart, setAddedToCart] = useState(false)
-
   return (
     <addedToCartContext.Provider value={{ addedToCart, setAddedToCart }}>
       {children}

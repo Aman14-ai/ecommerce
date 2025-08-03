@@ -54,6 +54,7 @@ export async function addToCart(productId: string) {
     return {
       message: "Product added to cart successfully",
       status: 200,
+      cart
     };
   } catch (error) {
     console.log(error);
@@ -64,4 +65,55 @@ export async function addToCart(productId: string) {
   }
 }
 
+export async function incrementQunatity(cartItemId: string) {
+  try {
+    const quantity = await prisma.cartItem.findUnique({
+      where: { id: cartItemId },
+      select: { quantity: true },
+    })
 
+    if(quantity && quantity.quantity >= 5) return {message: "Maximum quantity reached", status: 400};
+
+    await prisma.cartItem.update({
+      where: { id: cartItemId },
+      data: { quantity: { increment: 1 } },
+    });
+    revalidatePath("/cart");
+    return {message:"Quantity incremented successfully", status: 200};
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function decrementQuantity(cartItemId:string) {
+  try {
+
+    const quantity = await prisma.cartItem.findUnique({
+      where: { id: cartItemId },
+      select: { quantity: true },
+    })
+
+    if(quantity && quantity.quantity == 1){
+      // remove item from cart
+      await prisma.cartItem.delete({where: {id: cartItemId}});
+      revalidatePath('/cart')
+      return {message: "Item removed from cart", status: 200};
+    }
+
+    await prisma.cartItem.update({
+      where: { id: cartItemId },
+      data: { quantity: { decrement: 1 } },
+    });
+    revalidatePath("/cart");
+    return {message:"Quantity decremented successfully", status: 200};
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function calculateSubtotal(){
+  const cart = await getCart();
+  if(!cart) return null;
+  revalidatePath('/cart');
+  return cart.subtotal;
+}

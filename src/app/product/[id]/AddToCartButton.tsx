@@ -7,9 +7,9 @@ import { useContext, useState } from "react";
 import { toast } from "sonner";
 
 const AddToCartButton = ({ productId }: { productId: string }) => {
+
   const [loading, setLoading] = useState(false);
   const addedToCartContextState = useContext(addedToCartContext)
-  
 
   const handleAddToCart = async () => {
     setLoading(true);

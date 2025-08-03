@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <AddedToCartProvider>
           <Navbar />
-          <div className="mt-25"> {children}</div>
+          <div className="mt-25 min-h-screen bg-base-100"> {children}</div>
           <Footer />
           <Toaster
             position="top-center"
